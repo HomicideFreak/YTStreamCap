@@ -8,7 +8,7 @@ apt update -y && apt upgrade -y
 ```
 **Step 2:**
 ```
-apt install python3 python3-venv python3-pip
+apt install python3 python3-venv python3-pip -y
 ```
 **Step 3:**
 ```
@@ -23,9 +23,11 @@ source PATH_TO_DESIRED_FOLDER/bin/activate
 pip install yt_dlp google-api-python-client
 ```
 **Step 6:**<br />
-<br />[Download main.py](https://raw.githubusercontent.com/HomicideFreak/YTStreamCap/main/main.py)<br />
+<br />[Download main.py](https://github.com/HomicideFreak/YTStreamCap/releases/download/Releases/main.py)<br />
 <br />**Step 7:**<br />
 <br />Put main.py in your virtual environment folder<br />
+<br /> **_!!! IMPORTANT !!!_**<br />
+<br />**_PUT YOUR API KEY IN THE main.py SCRIPT_**<br />
 
 ## Usage
 * Make sure virutal environment is activated: 
