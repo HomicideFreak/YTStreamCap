@@ -20,7 +20,7 @@ def download_stream(url, outpath):
         print("\nDownload interrupted! Attempting to merge partial files...")
 
 if __name__ == "__main__":
-    API_KEY = "ENTER_YOUR_API_KEY"
+    API_KEY = "YOUR_API_KEY"
     while True:
         CHANNEL_USERNAME = input("Input channel name to track: ")
         youtube = build("youtube", "v3", developerKey=API_KEY)
@@ -32,6 +32,8 @@ if __name__ == "__main__":
             maxResults=10
         )
         response = request.execute()
+        if len(response["items"]) != 0:
+            print("Results found: " + str(len(response["items"])))
         index = 0
         channel_id = None
         while index < len(response["items"]):
@@ -51,7 +53,10 @@ if __name__ == "__main__":
                 index = index + 1
                 if index == len(response["items"]):
                     index = 0
-        break
+        if len(response["items"]) != 0:
+            break
+        else:
+            print("No results found for specified channel try again. . .")
 
     OUT_PATH = input("Input path to output folder: ")
 
