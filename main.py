@@ -4,7 +4,7 @@ import time
 
 def download_stream(url, outpath):
     ydl_opts = {
-        'outtmpl': str(outpath) + '/%(title)s.%(ext)s',
+        'outtmpl': str(outpath) + '/%(channel)s_%(upload_date>%Y-%m-%d)s.%(ext)s',
         'live_from_start': True,
         'format': 'bestvideo+bestaudio',
         'concurrent-fragments': 10,    # Increase parallel fragment downloads
